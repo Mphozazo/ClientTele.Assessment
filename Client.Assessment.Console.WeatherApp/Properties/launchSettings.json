@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Client.Assessment.Console.WeatherApp": {
+      "commandName": "Project",
+      "commandLineArgs": "Sasolburg Soweto Pretoria Invalid"
+    }
+  }
+}
