@@ -26,6 +26,10 @@
 <h3 align="left">Build Languages and Tools:</h3>
 <p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> </p>
 
+#### .Net References 
+ - Target Framework version 9.0
+ - .Net core
+   
 
 ## Open Weather MAP Application Reference
 
@@ -69,7 +73,7 @@
 - Repository Pattern
 - Async 
 - SOLID principles - ISP
-- EF
+- EF - SqlLite
 - Generics
 
 
@@ -77,3 +81,7 @@
  - Project requires no extra setup as database will be auto created if not exists.
  - The application is layerd with data assembly project namely : <b>ClientTele.Assessment.Data.Customer</b> Contains all CRUD operation on Customer information.
 
+
+### Note 
+By opening the solution <b> ClientTele.Assessment</b> Will pretty much run all the project out of the box.</p>
+All the Project assessment comes with Unit test classes and I tried to cover the basic operation per requirements.
