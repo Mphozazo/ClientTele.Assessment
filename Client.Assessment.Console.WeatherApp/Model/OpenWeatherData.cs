@@ -8,28 +8,28 @@ namespace Client.Assessment.Console.WeatherApp.Model
     public class OpenWeatherResponse
     {
         [JsonPropertyName("name")]
-        public string CityName { get; set; }
+        public string CityName { get; set; } = string.Empty;
 
         [JsonPropertyName("weather")]
-        public WeatherInfo[] Weather { get; set; }
+        public required WeatherInfo[] Weather { get; set; } 
 
         [JsonPropertyName("main")]
-        public MainInfo Main { get; set; }
+        public required MainInfo Main { get; set; }
 
         [JsonPropertyName("wind")]
-        public WindInfo Wind { get; set; }
+        public required WindInfo Wind { get; set; }
 
         [JsonPropertyName("sys")]
-        public SysInfo Sys { get; set; }
+        public required SysInfo Sys { get; set; }
     }
 
     public class WeatherInfo
     {
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [JsonPropertyName("icon")]
-        public string Icon { get; set; }
+        public string Icon { get; set; } = string.Empty;
     }
 
     public class MainInfo
@@ -59,6 +59,6 @@ namespace Client.Assessment.Console.WeatherApp.Model
     public class SysInfo
     {
         [JsonPropertyName("country")]
-        public string Country { get; set; }
+        public string Country { get; set; } = string.Empty;
     }
 }
