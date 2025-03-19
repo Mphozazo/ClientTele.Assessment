@@ -1,5 +1,5 @@
 <h1 align="center">ClientTele Development Assessment</h1>
-<h3 align="center">by Walter Mpho Heisi</h3>
+<h3 align="center">by Walter Mpho Heisi  - <a href="mailto:mphozazo@gmail.com">Email Me</a> </h3>
 <h3 align="center">Developer from South Africa ( Sasolburg ) FS</h3>
 
 
@@ -41,7 +41,7 @@
 | `api_key` | `string` | 83f156186085092eacf581573389df79|
 
 
-- Note the above key will be available for 10-day (from 18th ), which will be later disabled.
+- Note the above key will be available for 10-day (from 18th ), which will be later disabled.If the key is not working please reach out.
 
 ## Features
 
@@ -49,8 +49,31 @@
 - SOLID principles - ISP and DIP
 
 
+## Factorial Calculator Reference
+
+   ## Features
+
+- Thread Safe
+- Async 
+- SOLID principles - ISP 
+
 
 ## Setup
  - Project requires no extra setup as all settings are on appsetttings.json.
- - See the launchsettings how the console is being run, where either city can be provided as running parameter.
- - Also support mutliple city paramters , launchsettings file curerntly is setup to run mutliple city.
+
+
+## Customer Management Reference
+
+   ## Features
+
+- Repository Pattern
+- Async 
+- SOLID principles - ISP
+- EF
+- Generics
+
+
+## Setup
+ - Project requires no extra setup as database will be auto created if not exists.
+ - The application is layerd with data assembly project namely : <b>ClientTele.Assessment.Data.Customer</b> Contains all CRUD operation on Customer information.
+
