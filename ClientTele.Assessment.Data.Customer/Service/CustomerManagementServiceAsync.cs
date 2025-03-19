@@ -1,10 +1,5 @@
 ﻿using ClientTele.Assessment.Data.Customer.Interface;
 using ClientTele.Assessment.Data.Customer.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClientTele.Assessment.Data.Customer.Service
 {
@@ -21,48 +16,80 @@ namespace ClientTele.Assessment.Data.Customer.Service
             _customerRepository = customerRepository;
         }
 
-        public async Task AddCustomerAsync(CustomerEntity customer)
+        public async Task AddCustomerAsync(Model.Customer customer)
         {
             await _customerRepository.AddAsync(customer);
+            await _customerRepository.SaveAsync();
         }
 
-        public async Task<IEnumerable<CustomerEntity>> GetAllCustomersAsync()
+        public async Task<IEnumerable<Model.Customer>> GetAllCustomersAsync()
         {
             return await _customerRepository.GetAllAsync();
         }
 
-        public async Task<CustomerEntity> GetCustomerByIdAsync(int id)
+        public async Task<Model.Customer> GetCustomerByIdAsync(int id)
         {
             return await _customerRepository.FindByIdAsync(id);
         }
 
         public async Task<bool> DeleteCustomerAsync(int id)
         {
-            return await _customerRepository.DeleteAsync(id);
+            try
+            {
+                var results  = await _customerRepository.DeleteAsync(id);
+                await _customerRepository.SaveAsync();
+                return results;
+            }
+            catch 
+            {
+
+                throw;
+            }
+             
+
         }
 
-        public async Task<bool> DeleteCustomerAsync(CustomerEntity customer)
+        public async Task<bool> DeleteCustomerAsync(Model.Customer customer)
         {
-            return await _customerRepository.DeleteAsync(customer);
+            try
+            {
+               var result  =  await _customerRepository.DeleteAsync(customer);
+                await _customerRepository.SaveAsync();
+                return result;
+            }
+            catch
+            {
+
+                throw;
+            }
+            
             
         }
 
-        /// <summary>
-        ///  Find customer by condition
-        /// </summary>
-        /// <param name="expression"></param>
-        /// <returns></returns>
-        public async Task<CustomerEntity?> FindCustomerByConditionAsync(Func<CustomerEntity, bool> expression)
+        public async Task<Model.Customer> UpdateCustomerAsync(Model.Customer customer)
         {
-            return await _customerRepository.FindByConditionAsync(x => expression(x));
+            try
+            {
+                var results  = await _customerRepository.UpdateAsync(customer);
+                await _customerRepository.SaveAsync();
+                return results;
+
+            }
+            catch 
+            {
+
+                throw;
+            }
+            
         }
 
-        public async Task<CustomerEntity> UpdateCustomerAsync(CustomerEntity customer)
+        public async Task<Model.Customer?> FindCustomerByEmailAsync(string email)
         {
-            return await _customerRepository.UpdateAsync(customer);
+            return await _customerRepository.FindByConditionAsync(x => x.Email == email);
         }
-
-
-
+        public async Task<Model.Customer?> FindCustomerByAsync(string name)
+        {
+            return await _customerRepository.FindByConditionAsync(x => x.Name == name);
+        }
     }
 }

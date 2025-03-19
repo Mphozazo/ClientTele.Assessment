@@ -5,9 +5,9 @@ namespace ClientTele.Assessment.Data.Customer.Interface
     /// <summary>
     /// Customer repository interface for async operations with extra operations
     /// </summary>
-    public interface ICustomerEntityAsync : IGenericRepositoryAsync<CustomerEntity>
+    public interface ICustomerEntityAsync : IGenericRepositoryAsync<Model.Customer>
     {
-        Task<CustomerEntity?> GetCustomerByNameAsync(string name);
-        Task<CustomerEntity?> GetCustomerByEmailAsync(string email);
+        Task<Model.Customer?> GetCustomerByNameAsync(string name);
+        Task<Model.Customer?> GetCustomerByEmailAsync(string email);
     }
 }

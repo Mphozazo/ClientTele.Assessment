@@ -12,7 +12,7 @@ namespace ClientTele.Assessment.Data.Customer.Model
     /// <summary>
     /// Customer Entity
     /// </summary>
-    public class CustomerEntity : IEntity
+    public class Customer : IEntity
      {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

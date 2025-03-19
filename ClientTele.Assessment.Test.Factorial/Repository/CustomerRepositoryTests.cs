@@ -16,7 +16,7 @@ namespace ClientTele.Assessment.Test.Repository
             await dbContext.Database.EnsureCreatedAsync();
 
             // Seed Test Data
-            dbContext.Customers.Add(new CustomerEntity { Name = "Walter Heisi", Email = "walterh@example.com", PhoneNumber = "1234567890" });
+            dbContext.Customers.Add(new Customer { Name = "Walter Heisi", Email = "walterh@example.com", PhoneNumber = "1234567890" });
             await dbContext.SaveChangesAsync();
 
             return dbContext;
@@ -31,7 +31,7 @@ namespace ClientTele.Assessment.Test.Repository
             var customer = await repository.GetCustomerByEmailAsync("walterh@example.com");
 
             Assert.NotNull(customer);
-            Assert.Equal("John Doe", customer.Name);
+            Assert.Equal("Walter Heisi", customer.Name);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace ClientTele.Assessment.Test.Repository
             var dbContext = await GetDatabaseContext();
             var repository = new CustomerRepositoryAsync(dbContext);
 
-            var newCustomer = new CustomerEntity { Name = "Walter Heisi", Email = "walterh@example.com", PhoneNumber = "9876543210" };
+            var newCustomer = new Customer { Name = "Walter Heisi", Email = "walterh@example.com", PhoneNumber = "9876543210" };
             await repository.AddAsync(newCustomer);
             await repository.SaveAsync();
 

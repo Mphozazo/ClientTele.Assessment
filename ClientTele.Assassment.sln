@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Assessment.Console.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTele.Assessment.Data.Customer", "ClientTele.Assessment.Data.Customer\ClientTele.Assessment.Data.Customer.csproj", "{B74E6E98-9E4B-41DB-BE18-5B43079A1C4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTele.Assessment.Console.CustomerManagement", "ClientTele.Assessment.Console.CustomerManagement\ClientTele.Assessment.Console.CustomerManagement.csproj", "{3F729433-953A-4DEC-BCED-173DD2B8DC54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B74E6E98-9E4B-41DB-BE18-5B43079A1C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B74E6E98-9E4B-41DB-BE18-5B43079A1C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B74E6E98-9E4B-41DB-BE18-5B43079A1C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F729433-953A-4DEC-BCED-173DD2B8DC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F729433-953A-4DEC-BCED-173DD2B8DC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F729433-953A-4DEC-BCED-173DD2B8DC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F729433-953A-4DEC-BCED-173DD2B8DC54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

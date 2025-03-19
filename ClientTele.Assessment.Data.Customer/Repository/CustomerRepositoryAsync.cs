@@ -5,16 +5,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClientTele.Assessment.Data.Customer.Repository
 {
-    public class CustomerRepositoryAsync : GenericRepositoryAsync<CustomerEntity>, ICustomerEntityAsync
+    /// <summary>
+    ///  Customer Repository for async CRUD operations from Generic Repository
+    /// </summary>
+    public class CustomerRepositoryAsync : GenericRepositoryAsync<Model.Customer>, ICustomerEntityAsync
     {
         public CustomerRepositoryAsync(ApplicationDbContext context) : base(context) { }
 
-        public async Task<CustomerEntity?> GetCustomerByEmailAsync(string email)
+        public async Task<Model.Customer?> GetCustomerByEmailAsync(string email)
         {
            return await FindByConditionAsync(x => x.Email == email);
         }
 
-        public async Task<CustomerEntity?> GetCustomerByNameAsync(string name)
+        public async Task<Model.Customer?> GetCustomerByNameAsync(string name)
         {
             return await FindByConditionAsync(x => x.Name == name);
         }

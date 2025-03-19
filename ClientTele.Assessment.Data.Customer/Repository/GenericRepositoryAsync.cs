@@ -48,7 +48,24 @@ namespace ClientTele.Assessment.Data.Customer.Repository
         public async Task<T> FindByIdAsync(int id) => await _dbSet.FindAsync(id);
         public async Task<IEnumerable<T>> GetAllAsync() => await _dbSet.ToListAsync();
         public Task SaveAsync() => _dbcontext.SaveChangesAsync();
-        public async Task<T> UpdateAsync(T entity) => (await Task.FromResult(_dbSet.Update(entity))).Entity;
+        public async Task<T> UpdateAsync(T entity) 
+        {
+            // let's trick it  - delete the current Id and add the new .
+            var findEntity = await FindByIdAsync(entity.Id);
+
+            if (findEntity == null)
+                return (await Task.FromResult(_dbSet.Update(entity))).Entity;
+            else
+            {
+                _dbSet.Remove(findEntity);
+                await SaveAsync();
+
+                var newEntity = await AddAsync(entity);
+                return newEntity;
+            }
+
+        }
         
+
     }
 }
